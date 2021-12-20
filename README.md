@@ -71,34 +71,12 @@ export default {
       return {
         playerOptions: {
           poster: "/static/images/author.jpg",
+          controls: true,
+          preload: "metadata",
+          crossOrigin: "anonymous"
         }
       }
     },
-    mounted() {
-      console.log('this is current player instance object', this.player)
-    },
-    computed: {
-      player() {
-        return this.$refs.videoPlayer.video
-      }
-    },
-    methods: {
-      // listen event
-      onPlayerPlay(player) {
-        // console.log('player play!', player)
-      },
-      onPlayerPause(player) {
-        // console.log('player pause!', player)
-      },
-      // ...player event
-
-      // player is ready
-      onPlayerCanplay(player) {
-        console.log('the player can play', player)
-        // you can use it to do something...
-        // player.[methods]
-      }
-    }
   }
 </script>
 ```
