@@ -1,12 +1,27 @@
 {
   "name": "vue-sustainable-video-player",
+  "description": "A sustainable lazy-loading video player",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "author": {
+    "name": "Maarten Vleugels",
+    "email": "maarten@wonderlandams.com"
+  },
+  "keywords": ["sustainable", "video", "player", "vue", "lazy"],
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-library" : "vue-cli-service build --target lib --name vue-sustainable-video-player ./src/install.js",
     "lint": "vue-cli-service lint"
   },
+  "files": [
+    "dist/*",
+    "src/*",
+    "*.json",
+    "*.js"
+  ],
+  "main" : ".dist/vue-sustainable-video-player.common.js",
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
