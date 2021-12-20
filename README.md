@@ -39,3 +39,67 @@ export default {
   }
 }
 ```
+
+
+### SPA
+
+``` vue
+<template>
+  <sustainable-video-player  
+     ref="videoPlayer"
+     :options="playerOptions"
+     :inViewportDuration="3000"
+     width="800"
+     height="400"
+     :indicator="true"
+
+     @play="onPlayerPlay($event)"
+     @pause="onPlayerPause($event)"
+     @ended="onPlayerEnded($event)"
+     @waiting="onPlayerWaiting($event)"
+     @playing="onPlayerPlaying($event)"
+     @loadeddata="onPlayerLoadeddata($event)"
+     @timeupdate="onPlayerTimeupdate($event)"
+     @canplay="onPlayerCanplay($event)"
+     @canplaythrough="onPlayerCanplaythrough($event)"
+  </sustainable-video-player>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        playerOptions: {
+          poster: "/static/images/author.jpg",
+        }
+      }
+    },
+    mounted() {
+      console.log('this is current player instance object', this.player)
+    },
+    computed: {
+      player() {
+        return this.$refs.videoPlayer.video
+      }
+    },
+    methods: {
+      // listen event
+      onPlayerPlay(player) {
+        // console.log('player play!', player)
+      },
+      onPlayerPause(player) {
+        // console.log('player pause!', player)
+      },
+      // ...player event
+
+      // player is ready
+      onPlayerCanplay(player) {
+        console.log('the player can play', player)
+        // you can use it to do something...
+        // player.[methods]
+      }
+    }
+  }
+</script>
+```
+
