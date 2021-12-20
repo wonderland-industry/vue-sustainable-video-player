@@ -1,24 +1,41 @@
-# vue-sustainable-video-player
+# Vue-Sustainable-Video-Player
 
-## Project setup
-```
-yarn install
-```
+A sustainable video player for Vue. Loads only the first frame of video, and plays when x seconds in viewport.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+# Install
 
-### Compiles and minifies for production
-```
-yarn build
+#### NPM
+``` bash
+npm install vue-sustainable-video-player --save
 ```
 
-### Lints and fixes files
-```
-yarn lint
+### Mount
+
+#### mount with global
+
+``` javascript
+import Vue from 'vue'
+import SustainableVideoPlayer from 'vue-sustainable-video-player'
+
+// require vue-sustainable-video-player style
+import 'vue-sustainable-video-player/dist/vue-sustainable-video-player.css'
+
+Vue.use(SustainableVideoPlayer, /* {
+  options: global default options,
+} */)
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### mount with component
+
+```javascript
+// require styles
+import 'vue-sustainable-video-player/dist/vue-sustainable-video-player.css'
+
+import { SustainableVideoPlayer } from 'vue-sustainable-video-player'
+
+export default {
+  components: {
+    SustainableVideoPlayer
+  }
+}
+```
