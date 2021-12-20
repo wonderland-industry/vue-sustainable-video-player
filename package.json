@@ -21,7 +21,7 @@
     "*.json",
     "*.js"
   ],
-  "main" : ".dist/vue-sustainable-video-player.common.js",
+  "main" : "./dist/vue-sustainable-video-player.common.js",
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
